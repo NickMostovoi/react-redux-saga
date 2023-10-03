@@ -1,3 +1,25 @@
 body {
-  background-color: #b25e18;
+  margin: initial;
+  background-color: #c91075;
+}
+
+.numbers {
+  margin: 25px;
+}
+
+.numbers__btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.numbers__btn:hover {
+  background-color: #cecece;
+  cursor: pointer;
+}
+
+.numbers__fact {
+  font-size: 25px;
+  color: #fff;
 }
