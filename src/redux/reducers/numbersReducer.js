@@ -13,7 +13,7 @@ const numbersReducer = (state = initialState, action) => {
 
         case REQUESTED_FACT_FAILED:
             return {
-                fact: `Error: ${action.error}`
+                error: `Error: ${action.error}`
             };
 
         default:

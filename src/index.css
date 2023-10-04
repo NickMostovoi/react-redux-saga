@@ -3,10 +3,38 @@ body {
   background-color: #c91075;
 }
 
+/* ============= navigation ============= */
+.navigation {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.navigation__item {
+  margin: 0 5px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.navigation__item.active,
+.navigation__item:hover {
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+}
+
+/* ============= numbers ============= */
+/* ============= dogs ============= */
+.dogs,
 .numbers {
   margin: 25px;
 }
 
+.dogs__btn,
 .numbers__btn {
   border: none;
   border-radius: 5px;
@@ -14,6 +42,7 @@ body {
   margin-bottom: 10px;
 }
 
+.dogs__btn:hover,
 .numbers__btn:hover {
   background-color: #cecece;
   cursor: pointer;
@@ -22,4 +51,34 @@ body {
 .numbers__fact {
   font-size: 25px;
   color: #fff;
+}
+
+.dogs__img {
+  display: block;
+  max-height: 400px;
+}
+
+.loader {
+  color: #fff;
+  margin-left: 10px;
+}
+
+.error {
+  padding: 5px;
+  color: #fff;
+  font-size: 20px;
+  border-left: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+/* ============= footer ============= */
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 30px;
+  align-items: center;
 }
