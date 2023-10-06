@@ -71,9 +71,65 @@ body {
   border-bottom: 1px solid red;
 }
 
+/* ============= posts ============= */
+.posts,
+.post {
+  margin: 25px;
+}
+
+.posts li {
+  margin: 10px 0;
+}
+
+.posts__link {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.posts__link:hover {
+  background-color: black;
+  border-radius: 10px;
+}
+
+.post__container {
+  display: flex;
+  padding: 0 50px;
+  position: relative;
+  flex-direction: column;
+}
+
+.post__title {
+  text-align: center;
+}
+
+.post__body {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 100px;
+}
+
+.post__back {
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  background-color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  color: #000;
+  border: none;
+}
+
+.post__back:hover {
+  background-color: #cecece;
+  cursor: pointer;
+}
+
 /* ============= footer ============= */
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: #fff;
   display: flex;

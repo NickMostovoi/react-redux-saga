@@ -43,3 +43,21 @@ export const requestDogError = (data) => {
         error: data.message
     }
 };
+
+export const fetchPosts = () => {
+    return { type: TYPES.FETCH_POSTS }
+};
+
+export const requestPostsSuccess = (data) => {
+    return {
+        type: TYPES.REQUESTED_POSTS_SUCCEEDED,
+        posts: data
+    }
+};
+
+export const requestPostsError = (data) => {
+    return {
+        type: TYPES.REQUESTED_POSTS_FAILED,
+        error: data.message
+    }
+};

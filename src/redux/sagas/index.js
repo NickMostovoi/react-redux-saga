@@ -1,7 +1,9 @@
 import {put, takeEvery} from 'redux-saga/effects'
 import axios from "axios";
-import {FETCH_FACT, FETCH_DOG} from "../actions/actions.types";
+import {FETCH_FACT, FETCH_DOG, FETCH_POSTS} from "../actions/actions.types";
 import {
+    requestPostsSuccess,
+    requestPostsError,
     requestFactSuccess,
     requestFactError,
     requestDogSuccess,
@@ -13,6 +15,7 @@ import {
 export default function* rootSaga() {
     yield takeEvery(FETCH_FACT, fetchFactAsync);
     yield takeEvery(FETCH_DOG, fetchDogAsync);
+    yield takeEvery(FETCH_POSTS, fetchPostsAsync);
 }
 
 function* fetchFactAsync() {
@@ -35,6 +38,19 @@ function* fetchDogAsync() {
         yield put(hideLoader());
     } catch (error) {
         yield put(requestDogError(error));
+        yield put(hideLoader());
+    }
+}
+
+function* fetchPostsAsync() {
+    try {
+        yield put(showLoader());
+        const data = yield getData('https://jsonplaceholder.typicode.com/posts');
+        const updatedData = data.slice(0, 20);
+        yield put(requestPostsSuccess(updatedData));
+        yield put(hideLoader());
+    } catch (error) {
+        yield put(requestPostsError(error));
         yield put(hideLoader());
     }
 }
