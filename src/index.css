@@ -58,19 +58,6 @@ body {
   max-height: 400px;
 }
 
-.loader {
-  color: #fff;
-  margin-left: 10px;
-}
-
-.error {
-  padding: 5px;
-  color: #fff;
-  font-size: 20px;
-  border-left: 1px solid red;
-  border-bottom: 1px solid red;
-}
-
 /* ============= posts ============= */
 .posts,
 .post {
@@ -125,6 +112,31 @@ body {
 .post__back:hover {
   background-color: #cecece;
   cursor: pointer;
+}
+
+/* ============= loader ============= */
+.loader {
+  color: #fff;
+  margin-left: 10px;
+}
+
+.news__loader {
+  margin-top: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* ============= error ============= */
+.error {
+  padding: 5px;
+  color: #fff;
+  font-size: 20px;
+  border-left: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
+.news__error {
+  margin: 25px;
 }
 
 /* ============= footer ============= */

@@ -61,3 +61,24 @@ export const requestPostsError = (data) => {
         error: data.message
     }
 };
+
+export const fetchNews = (searchValue) => {
+    return {
+        type: TYPES.FETCH_NEWS,
+        searchValue: searchValue
+    }
+};
+
+export const requestNewsSuccess = (data) => {
+    return {
+        type: TYPES.REQUESTED_NEWS_SUCCEEDED,
+        news: data.articles
+    }
+};
+
+export const requestNewsError = (data) => {
+    return {
+        type: TYPES.REQUESTED_NEWS_FAILED,
+        error: data.message
+    }
+};
