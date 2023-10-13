@@ -3,14 +3,14 @@ import numbersReducer from './numbersReducer'
 import dogsReducer from "./dogsReducer";
 import loadersReducer from "./loadersReducer";
 import postsReducer from "./postsReducer";
-import newsReducer from "./newsReducer";
+import countriesReducer from "./countriesReducer";
 
 const rootReducer = combineReducers({
     loadersReducer,
     numbersReducer,
     dogsReducer,
     postsReducer,
-    newsReducer,
+    countriesReducer,
 });
 
 export default rootReducer;

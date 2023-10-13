@@ -1,9 +1,9 @@
 import {put, takeEvery} from 'redux-saga/effects'
 import axios from "axios";
-import {FETCH_FACT, FETCH_DOG, FETCH_POSTS, FETCH_NEWS} from "../actions/actions.types";
+import {FETCH_FACT, FETCH_DOG, FETCH_POSTS, FETCH_COUNTRIES} from "../actions/actions.types";
 import {
-    requestNewsSuccess,
-    requestNewsError,
+    requestCountriesSuccess,
+    requestCountriesError,
     requestPostsSuccess,
     requestPostsError,
     requestFactSuccess,
@@ -18,7 +18,7 @@ export default function* rootSaga() {
     yield takeEvery(FETCH_FACT, fetchFactAsync);
     yield takeEvery(FETCH_DOG, fetchDogAsync);
     yield takeEvery(FETCH_POSTS, fetchPostsAsync);
-    yield takeEvery(FETCH_NEWS, fetchNewsAsync);
+    yield takeEvery(FETCH_COUNTRIES, fetchCountriesAsync);
 }
 
 function* fetchFactAsync() {
@@ -58,14 +58,14 @@ function* fetchPostsAsync() {
     }
 }
 
-function* fetchNewsAsync({searchValue}) {
+function* fetchCountriesAsync() {
     try {
         yield put(showLoader());
-        const data = yield getData(`https://newsapi.org/v2/everything?q=${searchValue}&apiKey=4cae876b3c5649b587a703559ee0743a`);
-        yield put(requestNewsSuccess(data));
+        const data = yield getData(`https://restcountries.com/v3.1/all`);
+        yield put(requestCountriesSuccess(data));
         yield put(hideLoader());
     } catch (error) {
-        yield put(requestNewsError(error));
+        yield put(requestCountriesError(error));
         yield put(hideLoader());
     }
 }

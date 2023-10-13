@@ -1,4 +1,5 @@
 import * as TYPES from "./actions.types";
+import {FETCH_COUNTRIES, FILTER_COUNTRIES} from "./actions.types";
 
 export const showLoader = () => {
     return { type: TYPES.SHOW_LOADER }
@@ -62,23 +63,27 @@ export const requestPostsError = (data) => {
     }
 };
 
-export const fetchNews = (searchValue) => {
+export const fetchCountries = () => {
+    return { type: TYPES.FETCH_COUNTRIES }
+};
+
+export const filterCountries = (filteredCountries) => {
     return {
-        type: TYPES.FETCH_NEWS,
-        searchValue: searchValue
+        type: TYPES.FILTER_COUNTRIES,
+        filteredCountries: filteredCountries
     }
 };
 
-export const requestNewsSuccess = (data) => {
+export const requestCountriesSuccess = (data) => {
     return {
-        type: TYPES.REQUESTED_NEWS_SUCCEEDED,
-        news: data.articles
+        type: TYPES.REQUESTED_COUNTRIES_SUCCEEDED,
+        countries: data
     }
 };
 
-export const requestNewsError = (data) => {
+export const requestCountriesError = (data) => {
     return {
-        type: TYPES.REQUESTED_NEWS_FAILED,
+        type: TYPES.REQUESTED_COUNTRIES_FAILED,
         error: data.message
     }
 };
