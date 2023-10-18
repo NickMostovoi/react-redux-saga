@@ -1,7 +1,7 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
 import Layout from './layout'
-import Numbers from "../Numbers";
+import Jokes from "../Jokes";
 import Dogs from "../Dogs";
 import Posts from "../Posts";
 import Post from "../Posts/post";
@@ -11,7 +11,7 @@ function Navigation() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route path="numbers" element={<Numbers />}/>
+                <Route path="jokes" element={<Jokes />}/>
                 <Route path="dogs" element={<Dogs />}/>
                 <Route path="posts" element={<Posts />}/>
                 <Route path="posts/:id" element={<Post />}/>

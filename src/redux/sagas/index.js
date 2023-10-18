@@ -1,13 +1,13 @@
 import {put, takeEvery} from 'redux-saga/effects'
 import axios from "axios";
-import {FETCH_FACT, FETCH_DOG, FETCH_POSTS, FETCH_COUNTRIES} from "../actions/actions.types";
+import {FETCH_JOKE, FETCH_DOG, FETCH_POSTS, FETCH_COUNTRIES} from "../actions/actions.types";
 import {
     requestCountriesSuccess,
     requestCountriesError,
     requestPostsSuccess,
     requestPostsError,
-    requestFactSuccess,
-    requestFactError,
+    requestJokeSuccess,
+    requestJokeError,
     requestDogSuccess,
     requestDogError,
     showLoader,
@@ -15,20 +15,20 @@ import {
 } from '../actions'
 
 export default function* rootSaga() {
-    yield takeEvery(FETCH_FACT, fetchFactAsync);
+    yield takeEvery(FETCH_JOKE, fetchJokeAsync);
     yield takeEvery(FETCH_DOG, fetchDogAsync);
     yield takeEvery(FETCH_POSTS, fetchPostsAsync);
     yield takeEvery(FETCH_COUNTRIES, fetchCountriesAsync);
 }
 
-function* fetchFactAsync() {
+function* fetchJokeAsync() {
     try {
         yield put(showLoader());
-        const data = yield getData('https://numbersapi.com/random');
-        yield put(requestFactSuccess(data));
+        const data = yield getData('https://official-joke-api.appspot.com/random_joke');
+        yield put(requestJokeSuccess(data));
         yield put(hideLoader());
     } catch (error) {
-        yield put(requestFactError(error));
+        yield put(requestJokeError(error));
         yield put(hideLoader());
     }
 }

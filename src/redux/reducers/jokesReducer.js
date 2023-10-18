@@ -1,17 +1,19 @@
-import {REQUESTED_FACT_SUCCEEDED, REQUESTED_FACT_FAILED} from "../actions/actions.types";
+import {REQUESTED_JOKE_SUCCEEDED, REQUESTED_JOKE_FAILED} from "../actions/actions.types";
 
 const initialState = {
-    fact: ''
+    joke: '',
+    punchline: ''
 };
 
 const numbersReducer = (state = initialState, action) => {
     switch (action.type) {
-        case REQUESTED_FACT_SUCCEEDED:
+        case REQUESTED_JOKE_SUCCEEDED:
             return {
-                fact: action.fact
+                joke: action.joke.setup,
+                punchline: action.joke.punchline
             };
 
-        case REQUESTED_FACT_FAILED:
+        case REQUESTED_JOKE_FAILED:
             return {
                 error: `Error: ${action.error}`
             };

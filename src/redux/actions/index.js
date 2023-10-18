@@ -1,5 +1,4 @@
 import * as TYPES from "./actions.types";
-import {FETCH_COUNTRIES, FILTER_COUNTRIES} from "./actions.types";
 
 export const showLoader = () => {
     return { type: TYPES.SHOW_LOADER }
@@ -9,20 +8,20 @@ export const hideLoader = () => {
     return { type: TYPES.HIDE_LOADER }
 };
 
-export const fetchFact = () => {
-    return { type: TYPES.FETCH_FACT }
+export const fetchJoke = () => {
+    return { type: TYPES.FETCH_JOKE }
 };
 
-export const requestFactSuccess = (data) => {
+export const requestJokeSuccess = (data) => {
     return {
-        type: TYPES.REQUESTED_FACT_SUCCEEDED,
-        fact: data
+        type: TYPES.REQUESTED_JOKE_SUCCEEDED,
+        joke: data
     }
 };
 
-export const requestFactError = (data) => {
+export const requestJokeError = (data) => {
     return {
-        type: TYPES.REQUESTED_FACT_FAILED,
+        type: TYPES.REQUESTED_JOKE_FAILED,
         error: data.message
     }
 };

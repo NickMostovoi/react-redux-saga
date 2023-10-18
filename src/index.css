@@ -27,15 +27,15 @@ body {
   border-radius: 8px;
 }
 
-/* ============= numbers ============= */
+/* ============= jokes ============= */
 /* ============= dogs ============= */
 .dogs,
-.numbers {
+.jokes {
   margin: 25px;
 }
 
 .dogs__btn,
-.numbers__btn {
+.jokes__btn {
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -43,12 +43,14 @@ body {
 }
 
 .dogs__btn:hover,
-.numbers__btn:hover {
+.jokes__btn:hover {
   background-color: #cecece;
   cursor: pointer;
 }
 
-.numbers__fact {
+.jokes__joke,
+.jokes__punchline,
+.jokes__delay {
   font-size: 25px;
   color: #fff;
 }
