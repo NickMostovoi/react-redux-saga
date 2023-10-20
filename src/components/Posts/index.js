@@ -1,24 +1,36 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import {fetchPosts} from "../../redux/actions";
-import {postsReducer} from "../../redux/useSelectors";
+import {fetchPosts, changeSortOrder} from "../../redux/actions";
+import {sortedPostsSelector} from "../../redux/useSelectors";
 
 function Posts() {
     const dispatch = useDispatch();
-    const posts = useSelector(postsReducer);
+    const posts = useSelector(sortedPostsSelector);
+    const [showPosts, setShowPosts] = useState(false);
+
+    useEffect(() => {
+        if (posts.length) {
+            setShowPosts(true)
+        }
+    }, [posts])
 
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch])
 
+    const onSort = () => {
+        dispatch(changeSortOrder());
+    }
+
     return (
         <div className="posts">
-            {posts.posts &&
+            {showPosts && <button className="posts__sort" onClick={onSort}>&#9650; &#9660;</button>}
+            {showPosts &&
                 <ul>
-                    {posts.posts.map((post) => (
+                    {posts.map((post) => (
                         <li key={post.id}>
-                            <Link to={`/posts/${post.id}`} className="posts__link">{post.title}</Link>
+                            <Link to={`/posts/${post.id}`} className="posts__link">{post.id} - {post.title}</Link>
                         </li>
                     ))}
                 </ul>

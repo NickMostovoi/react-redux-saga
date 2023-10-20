@@ -31,7 +31,7 @@ function Countries() {
         <div className="countries">
             <Header resultCounter={resultCounter} />
 
-            <Container sx={{mt: 2.5}}>
+            <Container sx={{mt: 2.5, mb: 6}}>
                 <Grid container spacing={2}>
                     <CountryCard countries={countriesForRender} />
                 </Grid>

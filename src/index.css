@@ -99,6 +99,12 @@ body {
   margin-bottom: 100px;
 }
 
+.posts__sort {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .post__back {
   position: absolute;
   bottom: 0;
@@ -111,6 +117,7 @@ body {
   border: none;
 }
 
+.posts__sort:hover,
 .post__back:hover {
   background-color: #cecece;
   cursor: pointer;

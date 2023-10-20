@@ -48,6 +48,10 @@ export const fetchPosts = () => {
     return { type: TYPES.FETCH_POSTS }
 };
 
+export const changeSortOrder = () => {
+    return { type: TYPES.CHANGE_SORT_ORDER }
+};
+
 export const requestPostsSuccess = (data) => {
     return {
         type: TYPES.REQUESTED_POSTS_SUCCEEDED,
