@@ -30,7 +30,7 @@ function Posts() {
                 <ul>
                     {posts.map((post) => (
                         <li key={post.id}>
-                            <Link to={`/posts/${post.id}`} className="posts__link">{post.id} - {post.title}</Link>
+                            <Link to={`/react-redux-saga/posts/${post.id}`} className="posts__link">{post.id} - {post.title}</Link>
                         </li>
                     ))}
                 </ul>

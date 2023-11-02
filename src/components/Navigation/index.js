@@ -11,11 +11,11 @@ function Navigation() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route path="jokes" element={<Jokes />}/>
-                <Route path="dogs" element={<Dogs />}/>
-                <Route path="posts" element={<Posts />}/>
-                <Route path="posts/:id" element={<Post />}/>
-                <Route path="countries" element={<Countries />}/>
+                <Route path="react-redux-saga/jokes" element={<Jokes />}/>
+                <Route path="react-redux-saga/dogs" element={<Dogs />}/>
+                <Route path="react-redux-saga/posts" element={<Posts />}/>
+                <Route path="react-redux-saga/posts/:id" element={<Post />}/>
+                <Route path="react-redux-saga/countries" element={<Countries />}/>
                 <Route path="*" />
             </Route>
         </Routes>

@@ -5,10 +5,10 @@ function Layout() {
     return (
         <>
             <header className="navigation">
-                <NavLink className="navigation__item" to="/jokes">Jokes page</NavLink>
-                <NavLink className="navigation__item" to="/dogs">Dogs page</NavLink>
-                <NavLink className="navigation__item" to="/posts">Posts page</NavLink>
-                <NavLink className="navigation__item" to="/countries">Countries page</NavLink>
+                <NavLink className="navigation__item" to="react-redux-saga/jokes">Jokes page</NavLink>
+                <NavLink className="navigation__item" to="react-redux-saga/dogs">Dogs page</NavLink>
+                <NavLink className="navigation__item" to="react-redux-saga/posts">Posts page</NavLink>
+                <NavLink className="navigation__item" to="react-redux-saga/countries">Countries page</NavLink>
             </header>
 
             <main>
